@@ -9,8 +9,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.example.democexup.R
 import com.example.democexup.local.Entities.relations.MatakuliahDanDosen
+import com.google.android.material.card.MaterialCardView
 
-class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeAdapterViewHolder>() {
+class HomeAdapter(private val onClick : (id : String,nama :String) -> Unit) : RecyclerView.Adapter<HomeAdapter.HomeAdapterViewHolder>() {
 
     private val diffcallback = object : DiffUtil.ItemCallback<MatakuliahDanDosen>(){
         override fun areItemsTheSame(
@@ -45,9 +46,12 @@ class HomeAdapter : RecyclerView.Adapter<HomeAdapter.HomeAdapterViewHolder>() {
 
     inner class HomeAdapterViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
         private val namaMakul = itemView.findViewById<TextView>(R.id.tv_nama_produk)
-
+        private val itemclick = itemView.findViewById<MaterialCardView>(R.id.card_makul)
         fun bind(matakuliahDanDosen: MatakuliahDanDosen){
             namaMakul.text = matakuliahDanDosen.matakuliah.nama
+            itemclick.setOnClickListener {
+                onClick.invoke(matakuliahDanDosen.dosen.nid,matakuliahDanDosen.dosen.nama)
+            }
         }
     }
 }

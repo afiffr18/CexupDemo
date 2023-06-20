@@ -6,7 +6,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_makul"
         app:layout_constraintTop_toTopOf="parent"
+        android:foreground="?android:attr/selectableItemBackground"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:backgroundTint="@color/darkblue02"
