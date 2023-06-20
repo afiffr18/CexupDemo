@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView.LayoutManager
 import com.and2t2.secondhand.common.Status
 import com.example.democexup.R
 import com.example.democexup.databinding.FragmentHomeBinding
@@ -48,7 +48,12 @@ class HomeFragment : Fragment() {
     }
 
     private fun initRecycler(){
-        homeAdapter = HomeAdapter()
+        homeAdapter = HomeAdapter{
+            val bundle = Bundle()
+            bundle.putString("nid",it.nid)
+            bundle.putString("nama",it.nama)
+            findNavController().navigate(R.id.action_homeFragment_to_detailFragment,bundle)
+        }
         binding.rvHome.apply {
             adapter = homeAdapter
             layoutManager = GridLayoutManager(requireContext(),2)
