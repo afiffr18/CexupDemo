@@ -2,10 +2,13 @@ package com.example.democexup.ui
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.liveData
+import androidx.lifecycle.viewModelScope
 import com.and2t2.secondhand.common.Resource
 
 import com.example.democexup.domain.repository.DemoRepository
+import com.example.democexup.local.Entities.Matakuliah
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import okhttp3.Dispatcher
 import retrofit2.HttpException
 import java.io.IOException
@@ -23,6 +26,12 @@ class DemoViewModel(private val demoRepository: DemoRepository) : ViewModel() {
             emit(Resource.error(null,ex.message.toString()))
         }catch (ex : Exception){
             emit(Resource.error(null,ex.message.toString()))
+        }
+    }
+
+    fun insertMatakuliah(matakuliah: Matakuliah){
+        viewModelScope.launch {
+            demoRepository.insertMatakuliah(matakuliah)
         }
     }
 
