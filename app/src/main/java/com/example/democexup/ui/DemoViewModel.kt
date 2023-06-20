@@ -6,6 +6,8 @@ import androidx.lifecycle.viewModelScope
 import com.and2t2.secondhand.common.Resource
 
 import com.example.democexup.domain.repository.DemoRepository
+import com.example.democexup.local.Entities.Dosen
+import com.example.democexup.local.Entities.Mahasiswa
 import com.example.democexup.local.Entities.Matakuliah
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -35,6 +37,17 @@ class DemoViewModel(private val demoRepository: DemoRepository) : ViewModel() {
         }
     }
 
+    fun insertDosen(dosen: Dosen){
+        viewModelScope.launch {
+            demoRepository.insertDosen(dosen)
+        }
+    }
+
+    fun insertMahasiswa(mahasiswa : Mahasiswa){
+        viewModelScope.launch {
+            demoRepository.insertMahasiswa(mahasiswa)
+        }
+    }
 
 
 }

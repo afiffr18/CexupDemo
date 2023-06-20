@@ -5,6 +5,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Transaction
+import com.example.democexup.local.Entities.Dosen
 import com.example.democexup.local.Entities.Mahasiswa
 import com.example.democexup.local.Entities.Matakuliah
 import com.example.democexup.local.Entities.relations.MatakuliahDanDosen
@@ -18,10 +19,10 @@ interface MatakuliahDao {
 
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDosen(matakuliah: Matakuliah)
+    suspend fun insertDosen(dosen: Dosen)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDosen(mahasiswa: Mahasiswa)
+    suspend fun insertMahasiswa(mahasiswa: Mahasiswa)
 
     @Transaction
     @Query("select * from matakuliah")

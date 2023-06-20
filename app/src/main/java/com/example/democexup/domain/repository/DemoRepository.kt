@@ -2,6 +2,8 @@ package com.example.democexup.domain.repository
 
 import com.example.democexup.local.Dao.DatabaseDemo
 import com.example.democexup.local.Dao.MatakuliahDao
+import com.example.democexup.local.Entities.Dosen
+import com.example.democexup.local.Entities.Mahasiswa
 import com.example.democexup.local.Entities.Matakuliah
 import com.example.democexup.local.Entities.relations.MatakuliahDanDosen
 import kotlinx.coroutines.Dispatchers
@@ -17,4 +19,12 @@ class DemoRepository(private val mDb: DatabaseDemo) {
     suspend fun insertMatakuliah(matakuliah: Matakuliah) = withContext(Dispatchers.IO){
         mDb.MatakuliahDao().insertMatakuliah(matakuliah)
     }
+    suspend fun insertDosen(dosen: Dosen) = withContext(Dispatchers.IO){
+        mDb.MatakuliahDao().insertDosen(dosen)
+    }
+
+    suspend fun insertMahasiswa(mahasiswa: Mahasiswa) = withContext(Dispatchers.IO){
+        mDb.MatakuliahDao().insertMahasiswa(mahasiswa)
+    }
+
 }
