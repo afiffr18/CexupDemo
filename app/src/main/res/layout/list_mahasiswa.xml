@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/card_makul"
+        app:layout_constraintTop_toTopOf="parent"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:backgroundTint="@color/darkblue02"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="4dp">
+
+        <LinearLayout
+
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/tv_nim"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="1901092023"
+                android:fontFamily="@font/poppins_regular"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:maxLines="2"
+                android:textSize="14sp"
+                android:textColor="@color/neutral05"/>
+
+            <TextView
+                android:id="@+id/tv_mahasiswa"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="Afif Fujia Rahman"
+                android:fontFamily="@font/poppins_regular"
+                android:ellipsize="end"
+                android:padding="5dp"
+                android:maxLines="2"
+                android:textSize="14sp"
+                android:textColor="@color/neutral05"/>
+
+        </LinearLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

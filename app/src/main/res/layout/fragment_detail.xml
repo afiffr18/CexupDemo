@@ -22,5 +22,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_detail"
+        app:layout_constraintTop_toBottomOf="@id/tv_nama_dosen"
+        android:layout_width="match_parent"
+        tools:listitem="@layout/list_mahasiswa"
+        android:layout_height="0dp"
+        android:paddingBottom="110dp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -31,6 +31,18 @@ class DemoViewModel(private val demoRepository: DemoRepository) : ViewModel() {
         }
     }
 
+    fun getAllMahasiswa(id:Int) = liveData(Dispatchers.IO) {
+        emit(Resource.loading(null))
+        try{
+            emit(Resource.success(demoRepository.getMahasiswa(id)))
+        }catch (ex : IOException){
+            emit(Resource.error(null,ex.message.toString()))
+        }catch (ex : HttpException){
+            emit(Resource.error(null,ex.message.toString()))
+        }catch (ex : Exception){
+            emit(Resource.error(null,ex.message.toString()))
+        }
+    }
     fun insertMatakuliah(matakuliah: Matakuliah){
         viewModelScope.launch {
             demoRepository.insertMatakuliah(matakuliah)

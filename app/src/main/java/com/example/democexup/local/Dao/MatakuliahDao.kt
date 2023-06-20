@@ -29,6 +29,6 @@ interface MatakuliahDao {
     suspend fun getMatakuliahDanDosen() : List<MatakuliahDanDosen>
 
     @Transaction
-    @Query("select * from matakuliah")
-    suspend fun getMatakuliahDenganMahasiswa() : List<MatakuliahDenganMahasiswa>
+    @Query("select * from matakuliah where id = :matakuliahId")
+    suspend fun getMatakuliahDenganMahasiswa(matakuliahId : Int) : List<MatakuliahDenganMahasiswa>
 }

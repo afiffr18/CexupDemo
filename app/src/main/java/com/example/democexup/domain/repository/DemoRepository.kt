@@ -6,6 +6,7 @@ import com.example.democexup.local.Entities.Dosen
 import com.example.democexup.local.Entities.Mahasiswa
 import com.example.democexup.local.Entities.Matakuliah
 import com.example.democexup.local.Entities.relations.MatakuliahDanDosen
+import com.example.democexup.local.Entities.relations.MatakuliahDenganMahasiswa
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
@@ -16,6 +17,9 @@ class DemoRepository(private val mDb: DatabaseDemo) {
         return matakuliahDao.getMatakuliahDanDosen()
     }
 
+    suspend fun getMahasiswa(matakulliahId : Int) : List<MatakuliahDenganMahasiswa>{
+        return matakuliahDao.getMatakuliahDenganMahasiswa(matakulliahId)
+    }
     suspend fun insertMatakuliah(matakuliah: Matakuliah) = withContext(Dispatchers.IO){
         mDb.MatakuliahDao().insertMatakuliah(matakuliah)
     }
