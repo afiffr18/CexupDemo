@@ -32,6 +32,7 @@ class DetailFragment : Fragment() {
 
         val nid = arguments?.getString("nid")!!
         val nama = arguments?.getString("nama")!!
+        val makulId = arguments?.getInt("matakuliah_id")!!
 
         binding.tvNid.text = nid
         binding.tvNamaDosen.text = nama

@@ -52,6 +52,7 @@ class HomeFragment : Fragment() {
             val bundle = Bundle()
             bundle.putString("nid",it.nid)
             bundle.putString("nama",it.nama)
+            bundle.putInt("matakuliah_id",it.matakuliah_id)
             findNavController().navigate(R.id.action_homeFragment_to_detailFragment,bundle)
         }
         binding.rvHome.apply {
