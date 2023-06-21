@@ -6,14 +6,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.HomeFragment">
 
+    <TextView
+        android:id="@+id/tv_judul"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:text="DAFTAR MATA KULIAH"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:fontFamily="@font/poppins_extrabold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
     <androidx.recyclerview.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/tv_judul"
         android:layout_margin="10dp"
         android:id="@+id/rv_home"
         tools:listitem="@layout/list_mata_kuliah"
         app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
         app:spanCount="2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="0dp"/>
 
 
 

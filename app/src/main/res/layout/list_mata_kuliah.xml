@@ -21,6 +21,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:text="Matematika"
+            android:textAlignment="center"
             android:fontFamily="@font/poppins_regular"
             android:ellipsize="end"
             android:padding="5dp"
