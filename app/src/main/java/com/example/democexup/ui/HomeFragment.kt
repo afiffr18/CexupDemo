@@ -86,23 +86,23 @@ class HomeFragment : Fragment() {
             Matakuliah(4,"Kimia")
         )
         val dosen = listOf(
-            Dosen("1901","Joko",1),
-            Dosen("1902","Ervan",2),
-            Dosen("1903","Yance",3),
-            Dosen("1904","Ronal",4)
+            Dosen("DS1901","Joko, S.Kom",1),
+            Dosen("DS1902","Ervan, M.Kom",2),
+            Dosen("DS1903","Yance, S.Kom",3),
+            Dosen("Ds1904","Ronal, M.Kom",4)
 
         )
 
         val mahasiswa = listOf<Mahasiswa>(
-            Mahasiswa("2001","afif",1),
-            Mahasiswa("2002","fujia",1),
-            Mahasiswa("2003","rahman",1),
-            Mahasiswa("2004","lutfi",2),
-            Mahasiswa("2005","hidayat",2),
-            Mahasiswa("2006","rohim",2),
-            Mahasiswa("2007","nabila",3),
-            Mahasiswa("2008","farisa",3),
-            Mahasiswa("2009","zeini",4)
+            Mahasiswa("2001","afif rifki",1),
+            Mahasiswa("2002","fujia zaid",1),
+            Mahasiswa("2003","rahman attaqi",1),
+            Mahasiswa("2004","lutfi rahman",2),
+            Mahasiswa("2005","hidayat taufik",2),
+            Mahasiswa("2006","rohim farhan",2),
+            Mahasiswa("2007","nabila jenanda",3),
+            Mahasiswa("2008","farisa nurhayati",3),
+            Mahasiswa("2009","zeini fatimah",4)
 
         )
         matakuliah.forEach {
