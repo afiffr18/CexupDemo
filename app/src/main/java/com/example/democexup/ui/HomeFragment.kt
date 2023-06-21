@@ -16,12 +16,12 @@ import com.example.democexup.local.Dao.DatabaseDemo
 import com.example.democexup.local.Entities.Dosen
 import com.example.democexup.local.Entities.Mahasiswa
 import com.example.democexup.local.Entities.Matakuliah
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
 class HomeFragment : Fragment() {
 
-    private val demoRepository : DemoRepository by lazy { DemoRepository(DatabaseDemo.getInstance(requireContext())!!) }
-    private val demoViewModel : DemoViewModel by lazy { DemoViewModel(demoRepository) }
+    private val demoViewModel : DemoViewModel by viewModel()
 
     private lateinit var homeAdapter: HomeAdapter
     private var _binding : FragmentHomeBinding? = null

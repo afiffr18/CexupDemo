@@ -7,9 +7,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.RequestOptions
 import com.example.democexup.R
 import com.example.democexup.local.Entities.Mahasiswa
 import com.example.democexup.local.Entities.relations.MatakuliahDenganMahasiswa
+import com.google.android.material.imageview.ShapeableImageView
 
 class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
 
@@ -46,12 +49,16 @@ class DetailAdapter : RecyclerView.Adapter<DetailAdapter.DetailViewHolder>() {
     }
 
     inner class DetailViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val nim = itemView.findViewById<TextView>(R.id.tv_nim)
-        val nama = itemView.findViewById<TextView>(R.id.tv_mahasiswa)
-
+        private val nim = itemView.findViewById<TextView>(R.id.tv_nim)
+        private val nama = itemView.findViewById<TextView>(R.id.tv_mahasiswa)
+        private val ivImage = itemView.findViewById<ShapeableImageView>(R.id.iv_person)
+        private val bgOptions = RequestOptions().placeholder(R.drawable.baseline_person_24)
         fun bind(mahasiswa: Mahasiswa){
             nim.text = mahasiswa.nim
             nama.text = mahasiswa.nama
+//            Glide.with(itemView.context)
+//                .load("https://st3.depositphotos.com/1017228/18878/i/600/depositphotos_188781580-stock-photo-handsome-cheerful-young-man-standing.jpg")
+//                .apply(bgOptions).into(ivImage)
         }
     }
 }

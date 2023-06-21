@@ -21,14 +21,14 @@ import com.example.democexup.databinding.FragmentDetailBinding
 import com.example.democexup.domain.repository.DemoRepository
 import com.example.democexup.local.Dao.DatabaseDemo
 import com.example.democexup.local.Entities.Mahasiswa
+import org.koin.androidx.viewmodel.ext.android.viewModel
 import java.util.Locale
 
 
 class DetailFragment : Fragment() {
     private lateinit var detailAdapter: DetailAdapter
     lateinit var courseList: ArrayList<Mahasiswa>
-    private val demoRepository : DemoRepository by lazy { DemoRepository(DatabaseDemo.getInstance(requireContext())!!) }
-    private val demoViewModel : DemoViewModel by lazy { DemoViewModel(demoRepository) }
+    private val demoViewModel : DemoViewModel by viewModel()
     private var _binding : FragmentDetailBinding? = null
     private val binding get() = _binding!!
     override fun onCreateView(
