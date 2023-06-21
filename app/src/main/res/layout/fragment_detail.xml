@@ -6,29 +6,94 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.DetailFragment">
 
-    <TextView
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_dosen"
         app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:layout_margin="10dp"
+        app:cardElevation="10dp"
+        app:cardCornerRadius="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_person"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:theme="@style/ShapeAppearanceOverlay.App.CornerSize12"
+                android:background="#d3d3d3"
+                android:src="@drawable/baseline_person_24"
+                android:tint="@color/neutral03"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="centerCrop"
+                android:layout_margin="10dp"
+                />
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/iv_person"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:id="@+id/tv_nama_dosen"
+                android:text="Nama Dosen"
+                android:textSize="14sp"
+                android:fontFamily="@font/poppins_extrabold"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+            <TextView
+                app:layout_constraintTop_toBottomOf="@id/tv_nama_dosen"
+                app:layout_constraintStart_toStartOf="@id/tv_nama_dosen"
+                app:layout_constraintEnd_toEndOf="@id/tv_nama_dosen"
+                android:id="@+id/tv_nid"
+                android:text="id Dosen"
+                android:textSize="12sp"
+                android:fontFamily="@font/poppins_regular"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <TextView
+        app:layout_constraintTop_toBottomOf="@id/card_dosen"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/tv_nid"
-        android:text="id Dosen"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:id="@+id/tv_daftarsiswa"
+        android:text="Daftar Siswa"
+        android:textSize="14sp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/poppins_bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"/>
 
-    <TextView
-        app:layout_constraintTop_toBottomOf="@id/tv_nid"
+    <View
+        app:layout_constraintTop_toBottomOf="@id/tv_daftarsiswa"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/tv_nama_dosen"
-        android:text="Nama Dosen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="-3dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginStart="50dp"
+        android:background="@android:color/darker_gray"/>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:padding="5dp"
         android:id="@+id/rv_detail"
-        app:layout_constraintTop_toBottomOf="@id/tv_nama_dosen"
+        app:layout_constraintTop_toBottomOf="@id/tv_daftarsiswa"
         android:layout_width="match_parent"
         tools:listitem="@layout/list_mahasiswa"
         android:layout_height="0dp"
-        android:paddingBottom="110dp"/>
+        android:layout_marginBottom="50dp"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
